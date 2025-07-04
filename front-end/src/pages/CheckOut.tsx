@@ -118,7 +118,7 @@ function CheckOut() {
                   <input
                     type="text"
                     className="input"
-                    value={`$${cartData.total}`}
+                    value={`$${cartData.total.toFixed ? cartData.total.toFixed(2) : cartData.total}`}
                     readOnly
                   />
                 </div>

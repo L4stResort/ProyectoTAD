@@ -2,6 +2,7 @@ import "../Style/profile.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Fragment, useState, useEffect } from "react";
 
+
 function ProductInfo() {
   const [inputValue, setInputValue] = useState({});
   const productID = localStorage.getItem("productID");
@@ -75,7 +76,7 @@ function ProductInfo() {
                           <p>{inputValue.description}</p>
                           <div className="main-button">
                             <button className="searchButton" type="button" onClick={onSubmithandler}>
-                              Add To Cart
+                              Agregar al carrito
                             </button>
                           </div>
                         </div>
@@ -83,10 +84,10 @@ function ProductInfo() {
                       <div className="col-lg-4 align-self-center">
                         <ul>
                           <li>
-                            Game Category <span>{inputValue.category}</span>
+                            Categoria del juego <span>{inputValue.category}</span>
                           </li>
                           <li>
-                            Price <span>{inputValue.price}</span>
+                            Precio <span>{inputValue.price}</span>
                           </li>
                         </ul>
                       </div>

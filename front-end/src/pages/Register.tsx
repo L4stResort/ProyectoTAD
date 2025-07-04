@@ -24,10 +24,10 @@ function Register() {
       });
   
       if (response.ok) {
-        console.log("Registered successful");
+        console.log("Registro exitoso");
         window.location.href = "/";
       } else {
-        console.log("Registered failed");
+        console.log("Registro fallido");
       }
     } catch (error) {
       console.error("Error:", error);
@@ -46,7 +46,7 @@ function Register() {
       const dataString = JSON.stringify(data);
       window.location.href = "/login";
     } else {
-      alert("passwords doesn't match");
+      alert("passwords no coinciden");
     }
   }
   return (
@@ -178,28 +178,25 @@ function Register() {
               </div>
             </div>
             <div className="col">
-              <div className="row">
-                <div className="col inline">
-                  <label className="radio-inline">
-                    <input type="text" name="gender"></input>
-                  </label>
-                </div>
-                {/* <div className="col inline">
-                  <label className="radio-inline">
-                    <input type="radio" name="gender" value="female"/>
-                    Female
-                  </label>
-                </div> */}
+              <div className="field">
+                    <input
+                      type="text"
+                      className="form-control"
+                      required
+                      placeholder="Genero"
+                      name="gender"
+                      onChange={(event) => setGender(event.target.value)}
+                    ></input>
               </div>
             </div>
           </div>
           <div className="field space">
-            <input type="submit" value="Register Now" />
+            <input type="submit" value="Registrarse" />
           </div>
         </form>
         <div className="signup space">
-          Already have an account?
-          <a href="/">Login</a>
+          Ya tienes una cuenta?
+          <a href="/login">Login</a>
         </div>
       </div>
     </div>

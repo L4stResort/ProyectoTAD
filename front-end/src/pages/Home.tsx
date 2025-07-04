@@ -84,21 +84,21 @@ function Home() {
                     <div className="col-lg-12">
                       <div className="heading-section inline">
                         <h4>
-                          <em>Browse</em> Right Now
+                          <em>Buscar</em> juegos
                         </h4>
                         <div className="selct">
                           <select
                             value={selectedOption}
                             onChange={handleSelectChange}
                           >
-                            <option value="idle">ALL</option>
-                            <option value="Action">Action</option>
-                            <option value="Adventure">Adventure</option>
+                            <option value="idle">Todos</option>
+                            <option value="Action">Accion</option>
+                            <option value="Adventure">Aventura</option>
                             <option value="Casual">Casual</option>
                             <option value="Horror">Horror</option>
                             <option value="Open World">Open World</option>
-                            <option value="Survival">Survival</option>
-                            <option value="Simulation">Simulation</option>
+                            <option value="Survival">Supervivencia</option>
+                            <option value="Simulation">Simulacion</option>
                             <option value="Shooter">Shooter</option>
                           </select>
                           <span className="margleft"><i className="fa fa-search"></i></span>
@@ -108,11 +108,11 @@ function Home() {
                             type="text"
                             id="searchText"
                             name="searchKeyword"
-                            placeholder="Search"
+                            placeholder="Buscar"
                             value={searchKeyword}
                             onChange={(e) => setSearchKeyword(e.target.value)}
                           />
-                          <button className="searchButton" onClick={handleSearch}>Search</button>
+                          <button className="searchButton" onClick={handleSearch}>Buscar</button>
 
                         </div>
                       </div>

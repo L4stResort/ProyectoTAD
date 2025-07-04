@@ -73,7 +73,10 @@ function Cart() {
     if (response.ok) {
       setCartData((prev: any) => {
         const updatedProducts = prev.Products.filter((p: any) => p._id !== productId);
-        const newTotal = updatedProducts.reduce((sum: number, p: any) => sum + Number(p.price || 0), 0);
+        //const newTotal = updatedProducts.reduce((sum: number, p: any) => sum + Number(p.price || 0), 0);
+        const newTotal = parseFloat(
+          updatedProducts.reduce((sum: number, p: any) => sum + Number(p.price || 0), 0).toFixed(2)
+     );
         return {
           ...prev,
           Products: updatedProducts,
@@ -106,24 +109,24 @@ function Cart() {
           <div className="cart-page">
             <div className="cart-page-container">
               <div className="cart-page-header">
-                <h2 className="cart-header-text">Your Games Cart</h2>
+                <h2 className="cart-header-text">Tu carrito de juegos</h2>
               </div>
               <div className="cart-page-table">
                 <table className="cart-table-product">
                   <thead>
                     <tr className="cart-table-header">
-                      <th className="cart-table-img">Product Image</th>
+                      <th className="cart-table-img">Imagen del Producto</th>
                       <th className="cart-table-desktop cart-table-payment">
-                        Name
+                        Nombre
                       </th>
                       <th className="cart-table-desktop cart-table-size">
-                        Category
+                        Categoria
                       </th>
                       <th className="cart-table-size right-text-mobile">
-                        Price
+                        Precio
                       </th>
                       <th className="cart-table-size right-text-mobile">
-                        Action
+                        Accion
                       </th>
                     </tr>
                   </thead>
@@ -150,7 +153,9 @@ function Cart() {
                 </table>
               </div>
               <div className="cart-table-bill">
-                <div className="bill-total bold-text">${cartData.total}</div>
+                <div className="bill-total bold-text">
+                  ${cartData.total.toFixed ? cartData.total.toFixed(2) : cartData.total}
+                </div>
               </div>
               <div className="cart-header-footer">
                 <button
@@ -158,7 +163,7 @@ function Cart() {
                   type="button"
                   onClick={handleProceedToCheckout}
                 >
-                  Proceed to Checkout
+                  Realizar compra
                 </button>
               </div>
             </div>

@@ -60,10 +60,18 @@ img {
   }
   
   .most-popular .item {
-    background-color: #27292a;
-    padding: 30px 15px;
-    border-radius: 23px;
-    margin-bottom: 30px;
+  background-color: #27292a;
+  padding: 30px 15px;
+  border-radius: 23px;
+  margin-bottom: 30px;
+  width: 100%;           /* Asegura que ocupe todo el ancho de la columna */
+  min-height: 320px;     /* Ajusta este valor según el contenido mínimo */
+  max-height: 320px;     /* Opcional: fuerza a que no crezca más */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
+  box-sizing: border-box;
   }
   
   .most-popular .item .item {
@@ -92,8 +100,9 @@ img {
   }
   
   .most-popular .item ul {
+    list-style: none;
     float: right;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   
   .most-popular .item ul li {

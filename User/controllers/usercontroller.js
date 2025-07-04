@@ -22,7 +22,7 @@ const userRegister = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const foundUser = await userModel.findOne({ email: email });
     if (foundUser) {
-        res.status(400).json({ message: "user already exists" })
+        res.status(400).json({ message: "El usuario ya existe" })
     } else {
         const user = await UserModel.create({
             email,
@@ -33,11 +33,7 @@ const userRegister = async (req, res) => {
             phone: req.body.phone,
             gender: req.body.gender
         }
-
-
-
         )
-
         res.json(user.id)
     }
 }

@@ -29,7 +29,7 @@ function Login() {
           localStorage.setItem("user", JSON.stringify(data.user));
         });
       } else {
-        alert("password or email not correct");
+        alert("password o correo incorrecto");
         window.location.href = "/login";
         console.log("Login failed");
       }
@@ -43,15 +43,15 @@ function Login() {
     <Fragment>
       <div className="bg-img">
         <div className="content">
-          <header>Iniciar Sesion</header>
+          <header>Bienvenido</header>
           <form onSubmit={handleSubmit}>
-            <h4 className="fieldHeader">Email</h4>
+            <h4 className="fieldHeader">Correo Electronico</h4>
             <div className="field">
               <span className="person"> </span>
               <input
                 type="text"
                 required
-                placeholder="Email or Username"
+                placeholder="Correo Electronico"
                 onChange={(event) => setEmail(event.target.value)}
               ></input>
             </div>
@@ -68,7 +68,7 @@ function Login() {
               <span className="show">SHOW</span>
             </div>
             <div className="field space">
-              <input type="submit" value="LOGIN" />
+              <input type="submit" value="Iniciar Sesion" />
             </div>
           </form>
           <div className="signup space">

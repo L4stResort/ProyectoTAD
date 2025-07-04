@@ -11,15 +11,12 @@ const getCartProducts = async (req, res) => {
     });
 
 
-    // console.log(cartProductIds);
     const Products =  await ProductModel.find({ _id: { $in: cartProductIds } });
     Products.forEach(product => {
         total += product.price;
     });
     // console.log(Products);
 
-    // const productDetails = productArray.push(await ProductModel.findById(cartProducts[0].ProductId));
-    // res.json(productDetails);
     res.json({Products, total});
 }
 const addCartProduct = async (req, res) => {

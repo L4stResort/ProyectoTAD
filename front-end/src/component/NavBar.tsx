@@ -16,7 +16,7 @@ function NavBar() {
               <nav className="main-nav">
                 <a href="/" className="logo">
                   <h4>
-                    <em>Gaming</em> Strore
+                    <em>Zona</em> Gamer
                   </h4>
                 </a>
                 <div className="search-input">
@@ -33,7 +33,7 @@ function NavBar() {
                 <ul className="nav">
                   <li>
                     <a href="/" className="active">
-                      Home
+                      Inicio
                     </a>
                   </li>
 
@@ -41,14 +41,14 @@ function NavBar() {
                     <a href="/checkout">checkout</a>
                   </li> */}
                   <li>
-                    <a href="/cart">Cart</a>
+                    <a href="/cart">Carrito</a>
                   </li>
                   <li>
-                    <a href="/login">login</a>
+                    <a href="/login">Login</a>
                   </li>
                   <li>
                     <a href="/profile">
-                      Profile <img src="src\assets\profile-header.jpg" alt="" />
+                      Perfil <img src="src\assets\profile-header.jpg" alt="" />
                     </a>
                   </li>
                 </ul>
