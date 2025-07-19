@@ -49,8 +49,15 @@ function Profile() {
 
   // Mostrar historial de compras
   const handleShowHistory = async () => {
-    if (!userId) return;
-    const res = await fetch(`http://localhost:9003/userHistory?userId=${userId}`);
+    const token = localStorage.getItem("token");
+    if (!userId || !token) return;
+    const res = await fetch(`http://localhost:9004/userHistory?userId=${userId}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + token
+      }
+    });
     const data = await res.json();
     if (!data || data.length === 0) {
       alert("No tiene ninguna compra");

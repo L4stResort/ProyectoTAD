@@ -30,7 +30,7 @@ function ProductInfo() {
   const onSubmithandler = () => {
     const token = localStorage.getItem("token");
     if (token) {
-      console.log("Add to cart");
+      console.log("Agregado al carrito");
       //3003 is the port for the cart service
       fetch(`http://localhost:9003/cart/${productID}`, {
         method: "POST",
@@ -41,10 +41,10 @@ function ProductInfo() {
       })
         .then((response) => {
           if (response.ok) {
-            console.log("Added to cart");
-            alert("Added to cart");
+            console.log("Agregado al carrito");
+            alert("Agregado al carrito");
           } else {
-            console.log("Failed to add to cart");
+            console.log("Fallo al agregar al carrito");
             window.location.href = "/login";
           }
         })

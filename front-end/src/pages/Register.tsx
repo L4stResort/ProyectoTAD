@@ -53,7 +53,7 @@ function Register() {
     <div className="bg-img">
       <div className="registerContent">
         <header>Crear Cuenta</header>
-        <form action="http://localhost:3001/users" method="post" onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col">
               <h6>Nombre</h6>

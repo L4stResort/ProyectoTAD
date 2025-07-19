@@ -56,7 +56,8 @@ function CheckOut() {
     setIsProcessing(true);
 
     // Guardar historial de compra
-    await fetch("http://localhost:9003/userHistory", {
+    // Cambia 9003 por 9004
+    await fetch("http://localhost:9004/userHistory", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
